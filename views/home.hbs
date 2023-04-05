@@ -1,0 +1,41 @@
+<div class="row">
+    {{#events}}
+    <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="https://baconmockup.com/250/150" alt="Event Image">
+            {{!-- <img class="card-img-top" src="http://via.placeholder.com/250x150" alt="Event Image"> --}}
+            <div class="card-body">
+                <h2>{{ title }}</h2>
+                <p class="card-text">{{ description }}</p>
+                <p>Location: {{ location }}</p>
+    
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      Likes: {{ likes }}
+                    </div>
+               
+                    <div class="d-flex">
+                        <form method="POST" action="/event/like">
+                            <input type="hidden" value="{{id}}" name="id">
+                            <button type="submit" class="btn btn-sm btn-outline-primary">Like</button>
+                        </form>
+                        <form method="POST" action="/event/unlike">
+                            <input type="hidden" value="{{id}}" name="id">
+                            <button type="submit" class="btn btn-sm btn-outline-secondary">UN-Like</button>
+                        </form>
+                    </div>
+                </div>
+
+                {{!-- <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                </div> --}}
+            </div>
+        </div>
+    </div>
+    {{/events}}
+</div>

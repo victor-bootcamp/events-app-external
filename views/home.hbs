@@ -15,10 +15,10 @@
                       Likes: {{ likes }}
                     </div>
                
-                    <div class="d-flex">
+                    <div class="d-flex gap-2">
                         <form method="POST" action="/event/like">
                             <input type="hidden" value="{{id}}" name="id">
-                            <button type="submit" class="btn btn-sm btn-outline-primary">Like</button>
+                            <button type="submit" class="btn btn-sm btn-outline-warning">Like</button>
                         </form>
                         <form method="POST" action="/event/unlike">
                             <input type="hidden" value="{{id}}" name="id">
